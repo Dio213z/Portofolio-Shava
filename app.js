@@ -9,6 +9,8 @@ const closeMenu=()=>{menu.setAttribute('aria-expanded','false');$('#nav').classL
 $('#nav').querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 const motion=$('#motion');motion.hidden=false;motion.addEventListener('click',()=>{const paused=document.body.classList.toggle('paused');motion.textContent=paused?'▶ Lanjutkan animasi':'Ⅱ Jeda animasi';motion.setAttribute('aria-pressed',String(paused))});
 if(/^\d{9,15}$/.test(config.whatsapp||''))$('#wa').href='https://wa.me/'+config.whatsapp;
+if(config.instagram&&$('#instagram'))$('#instagram').href='https://instagram.com/'+encodeURIComponent(String(config.instagram).replace(/^@/,''));
+if(config.email&&$('#email'))$('#email').textContent='Email: '+config.email;
 const photo=$('#photo');if(photo){const urls=[config.photo,'assets/fotoprofil.png','assets/fotoprofil.jpg','assets/fotoprofil.jpeg'].filter(Boolean);let index=0;const next=()=>{if(index>=urls.length)return;const url=safeImage(urls[index++]);if(url)photo.src=url;else next()};photo.onload=()=>{photo.hidden=false;$('#initials').hidden=true};photo.onerror=next;if(config.photoPosition&&CSS.supports('object-position',config.photoPosition))photo.style.objectPosition=config.photoPosition;next()}
 const dialog=$('#dialog'),body=$('#dialog-body');let opener;
 function show(title,source){opener=source;body.replaceChildren();$('#dialog-title').textContent=title;dialog.showModal()}
