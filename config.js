@@ -4,7 +4,7 @@ window.PORTFOLIO = {
   photoPosition: "center",
   whatsapp: "6285656504478",
   instagram: "flachintyaaw",
-  email: "@tyachinchin",
+  email: "tyachinchin@gmail.com",
   // Tambahkan satu objek untuk setiap sertifikat/foto prestasi asli.
   achievements: [
     // { title: "Judul prestasi", description: "Keterangan", image: "https://domain.com/sertifikat.jpg" },
